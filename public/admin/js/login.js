@@ -78,4 +78,11 @@ $(function() {
       }
     });
   });
+
+  // 重置
+  $('[type=reset]').on('click', function () {
+    $loginform
+      .data("bootstrapValidator")
+      .resetForm(true);
+  })
 });
