@@ -39,7 +39,7 @@ ol {
   background: #367FA9;
 }
 .lt-aside .a-user-info {
-  padding: 20px 0;
+  padding: 30px 0;
   text-align: center;
 }
 .lt-aside .a-user-info img {
@@ -94,7 +94,7 @@ ol {
   line-height: 50px;
   width: 50px;
   text-align: center;
-  font-size: 20px;
+  font-size: 18px;
 }
 .lt-main .m-content {
   margin-top: 20px;
@@ -112,4 +112,8 @@ ol {
 }
 .lt-main.hideAnimate .m-top {
   padding-left: 0;
+}
+.table.table-bordered th,
+.table.table-bordered td {
+  text-align: center;
 }

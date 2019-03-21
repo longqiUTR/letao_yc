@@ -31,7 +31,7 @@ $(function() {
     $(".lt-aside,.lt-main").toggleClass("hideAnimate");
   });
 
-  // 显示模态框
+  // 显示退出模态框
   $(".m-top .right").on("click", function() {
     $("#modal").modal("show");
   });
@@ -44,3 +44,15 @@ $(function() {
     });
   });
 });
+
+function pagintor(res, render) {
+  $("#pagintor").bootstrapPaginator({
+    bootstrapMajorVersion: 3, //默认是2，如果是bootstrap3版本，这个参数必填
+    currentPage: res.page, //当前页
+    totalPages: Math.ceil(res.total / res.size), //总页数
+    onPageClicked: function (event, originalEvent, type, page) {
+      //为按钮绑定点击事件 page:当前点击的按钮值
+      render(page);
+    }
+  });
+}
