@@ -114,14 +114,22 @@ $(function () {
       size: {
         validators: {
           notEmpty: {
-            message: "请输入商品尺寸"
+            message: "请输入商品尺寸，例：33-44"
+          },
+          regexp: {
+            regexp: /^\d{2}-\d{2}$/,
+            message: "请输入正确的格式，例：33-44"
           }
         }
       },
       num: {
         validators: {
           notEmpty: {
-            message: "请输入商品库存"
+            message: "请输入商品库存1-9999"
+          },
+          regexp: {
+            regexp: /^[1-9]\d{0,3}$/,
+            message: "请输入正确的格式，例：99"
           }
         }
       },
@@ -158,6 +166,9 @@ $(function () {
         if (res.success) {
           $('#addModal').modal('hide')
           $('#addForm').data('bootstrapValidator').resetForm(true)
+          $('.catename').text('请选择二级分类')
+          $('[name=brand]').val('')
+          $('.img-group img').remove()
           render(1)
         }
       }

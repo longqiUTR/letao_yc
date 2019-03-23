@@ -45,10 +45,11 @@ $(function () {
       data: $("#addForm").serialize(),
       dataType: "json",
       success: function(res) {
-        $("#addModal").modal("hide"4
-        )
-        $('#addForm').data('bootstrapValidator').resetForm(true)
-        render(1)
+        if (res.success) {
+          $("#addModal").modal("hide")
+          $('#addForm').data('bootstrapValidator').resetForm(true)
+          render(1)
+        }
       }
     });
   })

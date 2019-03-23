@@ -103,10 +103,15 @@ $(function () {
       data: $('#addForm').serialize(),
       dataType: "json",
       success: function (res) {
-        console.log(res);
-        $('#addModal').modal('hide')
-        $('#addForm').data('bootstrapValidator').resetForm(true)
-        render(1)
+        if (res.success) {
+          $('#addModal').modal('hide')
+          $('#addForm').data('bootstrapValidator').resetForm(true)
+          $('.catename').text('请选择一级分类')
+          $('[name=categoryId]').val('')
+          $('#brandImg').attr('src', '')
+          $('[name=brandLogo]').val('')
+          render(1)
+        }
       }
     });
   })

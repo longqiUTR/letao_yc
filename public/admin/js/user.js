@@ -39,11 +39,11 @@ $(function () {
       dataType: "json",
       success: function(res) {
         if (res.success) {
-          $("#userModal").modal("hide");
-          render(currentPage);
+          $("#userModal").modal("hide")
+          render(currentPage)
         }
       }
-    });
+    })
   })
 
 
